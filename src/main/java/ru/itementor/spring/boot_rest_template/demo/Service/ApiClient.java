@@ -12,7 +12,7 @@ public class ApiClient {
     private final String baseUrl = "http://94.198.50.185:7081/api/users";
     private String sessionId;
 
-    public void runClient() {
+    public String runClient() {
         //Get запрос - получить пользователей
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<String> entity = new HttpEntity<>(headers);
@@ -44,7 +44,7 @@ public class ApiClient {
         String finalCode = postResponse.getBody() + putResponse.getBody() + deleteResponse.getBody();
         System.out.println("Final Code: " + finalCode);
 
-
+        return finalCode;
     }
 
 }
